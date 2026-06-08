@@ -1,0 +1,78 @@
+.services {
+  background: var(--navy);
+  padding: 80px 5%;
+}
+
+.servicesInner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.sectionLabel {
+  color: var(--mint);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  color: #fff;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.serviceCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  transition: var(--transition-med);
+  cursor: default;
+  /* Scroll animation state — toggled by JS */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.serviceCard:hover {
+  background: rgba(0, 196, 154, 0.1);
+  border-color: var(--mint);
+}
+
+.serviceIcon {
+  width: 52px;
+  height: 52px;
+  background: var(--mint);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.serviceCard h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.serviceCard p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}

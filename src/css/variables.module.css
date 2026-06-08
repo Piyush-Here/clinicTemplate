@@ -1,0 +1,31 @@
+:root {
+  /* Brand Palette */
+  --mint:        #00C49A;
+  --mint-light:  #E6F9F5;
+  --navy:        #0B2545;
+  --navy-mid:    #1A3A6B;
+  --cream:       #FAFAF7;
+  --grey:        #6B7280;
+  --red:         #FF4757;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 5%;
+
+  /* Radius */
+  --radius-pill: 50px;
+  --radius-card: 20px;
+  --radius-form: 12px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-med:  0.3s ease;
+  --transition-anim: 0.5s ease;
+}

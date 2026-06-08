@@ -1,0 +1,68 @@
+.doctors {
+  padding: 80px 5%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.doctors h2 {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.doctors > p {
+  color: var(--grey);
+  margin-bottom: 3rem;
+}
+
+.doctorsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.docCard {
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: var(--transition-med);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.docCard:hover {
+  box-shadow: 0 12px 40px rgba(0, 196, 154, 0.15);
+  transform: translateY(-4px);
+}
+
+.docImg {
+  aspect-ratio: 3 / 3.5;
+  background: linear-gradient(135deg, #E6F9F5, #B8F0E6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey);
+  font-size: 0.9rem;
+}
+
+.docInfo {
+  padding: 1.2rem;
+}
+
+.docInfo h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.docInfo span {
+  color: var(--mint);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .doctorsGrid {
+    grid-template-columns: 1fr;
+  }
+}

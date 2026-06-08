@@ -1,0 +1,109 @@
+.contact {
+  background: var(--navy);
+  padding: 80px 5%;
+}
+
+.contactInner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact h2 {
+  font-family: var(--font-display);
+  color: #fff;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.contact > .contactInner > p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contactDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.contactIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 196, 154, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Re-uses .formGroup, .submitBtn from booking.module.css
+   Override tokens for dark background context */
+.contactForm {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+}
+
+.contactForm label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contactForm input,
+.contactForm textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: var(--mint);
+}
+
+.contactFormGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.1rem;
+}
+
+.contactFormGroup{display:flex;flex-direction:column;gap:.5rem;}
+.contactFormGroup.full{grid-column:1/-1;}
+.contactFormGroup label{font-size:.85rem;font-weight:600;color:var(--navy);}
+.contactFormGroup input,.form-group select,.form-group textarea{padding:.85rem 1rem;border:1.5px solid #D1FAF0;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:.95rem;background:#fff;color:var(--navy);outline:none;transition:.2s;}
+.contactFormGroup input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--mint);}
+.contactFormGroup textarea{resize:vertical;min-height:100px;}
+.contactSubmitBtn{grid-column:1/-1;background:var(--navy);color:#fff;border:none;padding:1rem;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.25s;margin-top:.5rem;}
+.contactSubmitBtn:hover{background:var(--mint);}
+.contactSuccessMsg{display:none;background:var(--mint);color:#fff;padding:1rem;border-radius:12px;text-align:center;font-weight:600;grid-column:1/-1;}
+
+
+
+.footer {
+  background: #070F1E;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .contactInner {
+    grid-template-columns: 1fr;
+  }
+}

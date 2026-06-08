@@ -1,0 +1,109 @@
+.booking {
+  background: var(--mint-light);
+  padding: 80px 5%;
+}
+
+.bookingInner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.bookingInner h2 {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.bookingInner > p {
+  text-align: center;
+  color: var(--grey);
+  margin-bottom: 3rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup.full {
+  grid-column: 1 / -1;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #D1FAF0;
+  border-radius: var(--radius-form);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--navy);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: var(--mint);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitBtn {
+  grid-column: 1 / -1;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius-form);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: 0.25s;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background: var(--mint);
+}
+
+.successMsg {
+  display: none;
+  background: var(--mint);
+  color: #fff;
+  padding: 1rem;
+  border-radius: var(--radius-form);
+  text-align: center;
+  font-weight: 600;
+  grid-column: 1 / -1;
+}
+
+.successMsg.visible {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
