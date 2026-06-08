@@ -1,6 +1,12 @@
 import styles from '../css/hero.module.css' 
 
 function Hero() {
+  function handlePrimary(){
+    document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+  }
+  function handleOutline(){
+    document.getElementById('services').scrollIntoView({behavior:'smooth'});
+  }
   return (
     <>
     <section>
@@ -10,8 +16,8 @@ function Hero() {
       <h1>Your Health, Our <em>Priority</em> Always</h1>
       <p>Expert care from certified specialists. From routine checkups to complex diagnostics — we're with you every step.</p>
       <div className={styles.heroBtns}>
-        <button className="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
-        <button className="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button>
+        <button className={styles.btnPrimary} onClick={handlePrimary}>Book Appointment</button>
+        <button className={styles.btnOutline} onClick={handleOutline}>Our Services</button>
       </div>
     </div>
     <div className={styles.rel}>

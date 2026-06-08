@@ -1,6 +1,9 @@
 import styles from '../css/nav.module.css'
 
 function Nav() {
+  function handleClick(){
+    document.getElementById('booking').scrollIntoView({behavior:'smooth'})
+  }
   return (
     <>
     <nav>
@@ -12,7 +15,7 @@ function Nav() {
       <li><a href="#booking">Book</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button className={styles.navCta} onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
+    <button className={styles.navCta} onClick={handleClick}>Book Appointment</button>
   </div>
 </nav>
     </>

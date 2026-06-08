@@ -42,9 +42,6 @@
   font-weight: 600;
   font-size: 0.9rem;
 }
-.testiSectionLabel{
-  
-}
 @media (max-width: 768px) {
   .testiGrid {
     grid-template-columns: 1fr;
