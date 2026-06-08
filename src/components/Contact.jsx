@@ -4,7 +4,7 @@ function Contact() {
   const [id,setId] = useState("");
   function submitContact(){
     setId("success-contact");
-  // document.getElementById('success-contact').style.display='block';
+    document.getElementById('success-contact').style.display='block';
 }
   return (
    <>
@@ -22,7 +22,7 @@ function Contact() {
       <div className={styles.contactFormGrid}>
         <div className={styles.contactFormGroup}><label>Name</label><input type="text" placeholder="Your name"/></div>
         <div className={styles.contactFormGroup}><label>Phone</label><input type="tel" placeholder="+91..."/></div>
-        <div className={styles.contactFormGroup.full}><label>Message</label><textarea placeholder="Your message..." style="min-height:110px;"></textarea></div>
+        <div className={styles.contactFormGroup.full}><label>Message</label><textarea placeholder="Your message..." style={{"min-height":"110px"}}></textarea></div>
         <button className={styles.contactSubmitBtn} onClick={submitContact}>Send Message →</button>
         <div className={styles.contactSuccessMsg} id={id}>✅ Message sent! We'll respond shortly.</div>
       </div>

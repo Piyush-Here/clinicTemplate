@@ -5,7 +5,7 @@ function Booking() {
   const [id,setId] = useState("");
   function submitBooking(){
     setId("success-book");
-    // document.getElementById('success-book').style.display='block';
+    document.getElementById('success-book').style.display='block';
     document.getElementById('success-book').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
   return (
