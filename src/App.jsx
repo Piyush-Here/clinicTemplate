@@ -5,6 +5,7 @@ import Doctors from "./components/Doctors"
 import Booking from "./components/Booking"
 import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
+import { useScrollAnimation } from "./hooks/useScrollAnimation"
 import './App.css'
 
 function App() {

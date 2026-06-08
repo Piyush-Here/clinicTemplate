@@ -1,8 +1,7 @@
 import styles from '../css/contact.module.css'
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import {useState} from 'react';
 function Contact() {
-  const animatedRef = useScrollAnimation();
+
   const [id,setId] = useState("");
   function submitContact(){
     setId("success-contact");
@@ -15,10 +14,10 @@ function Contact() {
     <div>
       <h2>Get in Touch</h2>
       <p>Have questions about treatments, pricing, or insurance? We're happy to help.</p>
-      <div ref={animatedRef} className={styles.contactDetail}><div className={styles.contactIcon}>📍</div>123 Health Avenue, Bhubaneswar, Odisha 751001</div>
-      <div ref={animatedRef} className={styles.contactDetail}><div className={styles.contactIcon}>📞</div>+91 98765 43210</div>
-      <div ref={animatedRef} className={styles.contactDetail}><div className={styles.contactIcon}>📧</div>info@medicare-clinic.com</div>
-      <div ref={animatedRef} className={styles.contactDetail}><div className={styles.contactIcon}>🕘</div>Mon–Sat: 9:00 AM – 7:00 PM</div>
+      <div className={`${styles.serviceCard} animate-on-scroll`}><div className={styles.contactIcon}>📍</div>123 Health Avenue, Bhubaneswar, Odisha 751001</div>
+      <div className={`${styles.serviceCard} animate-on-scroll`}><div className={styles.contactIcon}>📞</div>+91 98765 43210</div>
+      <div className={`${styles.serviceCard} animate-on-scroll`}><div className={styles.contactIcon}>📧</div>info@medicare-clinic.com</div>
+      <div className={`${styles.serviceCard} animate-on-scroll`}><div className={styles.contactIcon}>🕘</div>Mon–Sat: 9:00 AM – 7:00 PM</div>
     </div>
     <div className={styles.contactForm}>
       <div className={styles.contactFormGrid}>
