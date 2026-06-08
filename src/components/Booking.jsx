@@ -1,5 +1,13 @@
+import { useState } from "react";
 import styles from "../css/booking.module.css"
+
 function Booking() {
+  const [id,setId] = useState("");
+  function submitBooking(){
+    setId("success-book");
+    document.getElementById('success-book').style.display='block';
+    document.getElementById('success-book').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
   return (
     <>
     <section ClassName={styles.booking} id="booking">
@@ -18,8 +26,8 @@ function Booking() {
         <select><option>Morning (9–12)</option><option>Afternoon (12–3)</option><option>Evening (3–6)</option></select>
       </div>
       <div ClassName={styles.formGroup.full}><label>Describe your concern</label><textarea placeholder="Brief description of your symptoms or query..."></textarea></div>
-      <button ClassName={styles.submitBtn} onclick="submitBooking()">Confirm Appointment →</button>
-      <div ClassName={styles.successMsg} id="success-book">✅ Appointment request received! We'll call you within 2 hours.</div>
+      <button ClassName={styles.submitBtn} onclick={submitBooking}>Confirm Appointment →</button>
+      <div ClassName={styles.successMsg} id={id}>✅ Appointment request received! We'll call you within 2 hours.</div>
     </div>
   </div>
 </section>
