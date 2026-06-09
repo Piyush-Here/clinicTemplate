@@ -2,35 +2,77 @@ import { useState } from "react";
 import styles from "../css/booking.module.css"
 
 function Booking() {
-  const [id,setId] = useState("");
-  function submitBooking(){
+  const [id, setId] = useState("");
+
+  function submitBooking() {
     setId("success-book");
-    document.getElementById('success-book').style.display='block';
-    document.getElementById('success-book').scrollIntoView({behavior:'smooth',block:'nearest'});
-}
+    // Delay to let React re-render before querying DOM
+    setTimeout(() => {
+      const el = document.getElementById('success-book');
+      if (el) {
+        el.style.display = 'block';
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }, 0);
+  }
+
   return (
     <>
-    <section className={styles.booking} id="booking">
-  <div className={styles.bookingInner}>
-    <h2>Book an Appointment</h2>
-    <p>Fill in your details and we'll confirm within 2 hours.</p>
-    <div className={styles.formGrid}>
-      <div className={styles.formGroup}><label>Full Name *</label><input type="text" placeholder="Your full name"/></div>
-      <div className={styles.formGroup}><label>Phone Number *</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
-      <div className={styles.formGroup}><label>Email</label><input type="email" placeholder="your@email.com"/></div>
-      <div className={styles.formGroup}><label>Department *</label>
-        <select><option>Select Department</option><option>Cardiology</option><option>Dental</option><option>Neurology</option><option>Ophthalmology</option><option>Diagnostics</option><option>General Medicine</option></select>
-      </div>
-      <div className={styles.formGroup}><label>Preferred Date *</label><input type="date"/></div>
-      <div className={styles.formGroup}><label>Preferred Time *</label>
-        <select><option>Morning (9–12)</option><option>Afternoon (12–3)</option><option>Evening (3–6)</option></select>
-      </div>
-      <div className={styles.formGroup.full}><label>Describe your concern</label><textarea placeholder="Brief description of your symptoms or query..."></textarea></div>
-      <button className={styles.submitBtn} onClick={submitBooking}>Confirm Appointment →</button>
-      <div className={styles.successMsg} id={id}>✅ Appointment request received! We'll call you within 2 hours.</div>
-    </div>
-  </div>
-</section>
+      <section className={styles.booking} id="booking">
+        <div className={styles.bookingInner}>
+          <h2>Book an Appointment</h2>
+          <p>Fill in your details and we'll confirm within 2 hours.</p>
+          <div className={styles.formGrid}>
+            <div className={styles.formGroup}>
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your full name" />
+            </div>
+            <div className={styles.formGroup}>
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" />
+            </div>
+            <div className={styles.formGroup}>
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
+            <div className={styles.formGroup}>
+              <label>Department *</label>
+              <select>
+                <option>Select Department</option>
+                <option>Cardiology</option>
+                <option>Dental</option>
+                <option>Neurology</option>
+                <option>Ophthalmology</option>
+                <option>Diagnostics</option>
+                <option>General Medicine</option>
+              </select>
+            </div>
+            <div className={styles.formGroup}>
+              <label>Preferred Date *</label>
+              <input type="date" />
+            </div>
+            <div className={styles.formGroup}>
+              <label>Preferred Time *</label>
+              <select>
+                <option>Morning (9 – 12)</option>
+                <option>Afternoon (12 – 3)</option>
+                <option>Evening (3 – 6)</option>
+              </select>
+            </div>
+            {/* FIX: styles.formGroup.full is undefined — use a wrapper div with correct class */}
+            <div className={`${styles.formGroup} ${styles.full}`}>
+              <label>Describe your concern</label>
+              <textarea placeholder="Brief description of your symptoms or query..."></textarea>
+            </div>
+            <button className={styles.submitBtn} onClick={submitBooking}>
+              Confirm Appointment →
+            </button>
+            <div className={styles.successMsg} id={id}>
+              ✓ Appointment request received! We'll call you within 2 hours.
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

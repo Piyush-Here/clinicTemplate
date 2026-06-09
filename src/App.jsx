@@ -9,16 +9,17 @@ import { useScrollAnimation } from "./hooks/useScrollAnimation"
 import './App.css'
 
 function App() {
+  useScrollAnimation()
 
-  return(
+  return (
     <>
-    <Nav></Nav>
-    <Hero></Hero>
-    <Services></Services>
-    <Doctors></Doctors>
-    <Booking></Booking>
-    <Testimonials></Testimonials>
-    <Contact></Contact>
+      <Nav />
+      <Hero />
+      <Services />
+      <Doctors />
+      <Booking />
+      <Testimonials />
+      <Contact />
     </>
   )
 }

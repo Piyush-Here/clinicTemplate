@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 export function useScrollAnimation() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -13,11 +12,9 @@ export function useScrollAnimation() {
       },
       { threshold: 0.1 }
     );
-
     // Watch everything with the global animation target class
     const targets = document.querySelectorAll('.animate-on-scroll');
     targets.forEach((el) => observer.observe(el));
-
     return () => {
       targets.forEach((el) => observer.unobserve(el));
     };

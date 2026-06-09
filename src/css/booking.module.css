@@ -68,6 +68,11 @@
   min-height: 100px;
 }
 
+/* Add this standalone class so it can be applied separately */
+.full {
+  grid-column: 1 / -1;
+}
+
 .submitBtn {
   grid-column: 1 / -1;
   background: var(--navy);
