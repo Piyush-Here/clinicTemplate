@@ -7,7 +7,7 @@ function Services() {
       <section className={styles.services} id="services">
         <div className={styles.servicesInner}>
           <div className={styles.sectionLabel}>What We Offer</div>
-          <h2>Comprehensive Medical Services</h2>
+          <h2 style={{color:'white'}}>Comprehensive Medical Services</h2>
           <div className={styles.servicesGrid}>
             <div className={`${styles.serviceCard} animate-on-scroll`}>
               <div className={styles.serviceIcon}>❤️</div>

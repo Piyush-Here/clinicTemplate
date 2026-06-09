@@ -19,23 +19,26 @@ function Contact() {
           <div>
             <h2>Get in Touch</h2>
             <p>Have questions about treatments, pricing, or insurance? We're happy to help.</p>
-            <div className={`${styles.serviceCard} animate-on-scroll`}>
+            
+            {/* FIX: replaced styles.serviceCard with styles.contactDetail */}
+            <div className={styles.contactDetail}>
               <div className={styles.contactIcon}>📍</div>
-              123 Health Avenue, Bhubaneswar, Odisha 751001
+              <span>123 Health Avenue, Bhubaneswar, Odisha 751001</span>
             </div>
-            <div className={`${styles.serviceCard} animate-on-scroll`}>
+            <div className={styles.contactDetail}>
               <div className={styles.contactIcon}>📞</div>
-              +91 98765 43210
+              <span>+91 98765 43210</span>
             </div>
-            <div className={`${styles.serviceCard} animate-on-scroll`}>
+            <div className={styles.contactDetail}>
               <div className={styles.contactIcon}>📧</div>
-              info@medicare-clinic.com
+              <span>info@medicare-clinic.com</span>
             </div>
-            <div className={`${styles.serviceCard} animate-on-scroll`}>
+            <div className={styles.contactDetail}>
               <div className={styles.contactIcon}>🕐</div>
-              Mon–Sat: 9:00 AM – 7:00 PM
+              <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
             </div>
           </div>
+
           <div className={styles.contactForm}>
             <div className={styles.contactFormGrid}>
               <div className={styles.contactFormGroup}>
@@ -46,7 +49,6 @@ function Contact() {
                 <label>Phone</label>
                 <input type="tel" placeholder="+91..." />
               </div>
-              {/* FIX: same .full issue */}
               <div className={`${styles.contactFormGroup} ${styles.full}`}>
                 <label>Message</label>
                 <textarea
@@ -54,7 +56,10 @@ function Contact() {
                   style={{ minHeight: "110px" }}
                 ></textarea>
               </div>
-              <button className={styles.contactSubmitBtn} onClick={submitContact}>
+              <button
+                className={styles.contactSubmitBtn}
+                onClick={submitContact}
+              >
                 Send Message →
               </button>
               <div className={styles.contactSuccessMsg} id={id}>
@@ -62,6 +67,7 @@ function Contact() {
               </div>
             </div>
           </div>
+
         </div>
       </section>
       <footer className={styles.footer}>

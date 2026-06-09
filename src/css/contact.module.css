@@ -12,31 +12,40 @@
   align-items: start;
 }
 
+/* ── Left column text ── */
 .contact h2 {
   font-family: var(--font-display);
-  color: #fff;
+  color: #ffffff;
   font-size: 2.6rem;
   margin-bottom: 1rem;
 }
 
-.contact > .contactInner > p {
-  color: rgba(255, 255, 255, 0.6);
+.contactInner > div > p {
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
   margin-bottom: 2rem;
-}
-
-.contactDetail {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
   font-size: 0.95rem;
 }
 
+/* ── Contact detail rows ── */
+.contactDetail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+.contactDetail span {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
 .contactIcon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
   background: rgba(0, 196, 154, 0.2);
   border-radius: 10px;
   display: flex;
@@ -46,54 +55,101 @@
   flex-shrink: 0;
 }
 
-/* Re-uses .formGroup, .submitBtn from booking.module.css
-   Override tokens for dark background context */
+/* ── Right column — form card ── */
 .contactForm {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-card);
   padding: 2rem;
 }
 
-.contactForm label {
-  color: rgba(255, 255, 255, 0.8);
+.contactFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
 }
 
-.contactForm input,
-.contactForm textarea {
-  background: rgba(255, 255, 255, 0.08);
+.full {
+  grid-column: 1 / -1;
+}
+
+/* ── Form groups ── */
+.contactFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactFormGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  /* FIX: was --navy (dark on dark) — changed to white */
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contactFormGroup input,
+.contactFormGroup textarea {
+  padding: 0.85rem 1rem;
   border: 1.5px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
+  border-radius: var(--radius-form);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  /* FIX: semi-transparent white background so text is visible */
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  outline: none;
+  transition: var(--transition-fast);
 }
 
-.contactForm input::placeholder,
-.contactForm textarea::placeholder {
+.contactFormGroup input::placeholder,
+.contactFormGroup textarea::placeholder {
   color: rgba(255, 255, 255, 0.35);
 }
 
-.contactForm input:focus,
-.contactForm textarea:focus {
+.contactFormGroup input:focus,
+.contactFormGroup textarea:focus {
   border-color: var(--mint);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.contactFormGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2.1rem;
+.contactFormGroup textarea {
+  resize: vertical;
+  min-height: 110px;
 }
 
-.contactFormGroup{display:flex;flex-direction:column;gap:.5rem;}
-.contactFormGroup.full{grid-column:1/-1;}
-.contactFormGroup label{font-size:.85rem;font-weight:600;color:var(--navy);}
-.contactFormGroup input,.form-group select,.form-group textarea{padding:.85rem 1rem;border:1.5px solid #D1FAF0;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:.95rem;background:#fff;color:var(--navy);outline:none;transition:.2s;}
-.contactFormGroup input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--mint);}
-.contactFormGroup textarea{resize:vertical;min-height:100px;}
-.contactSubmitBtn{grid-column:1/-1;background:var(--navy);color:#fff;border:none;padding:1rem;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.25s;margin-top:.5rem;}
-.contactSubmitBtn:hover{background:var(--mint);}
-.contactSuccessMsg{display:none;background:var(--mint);color:#fff;padding:1rem;border-radius:12px;text-align:center;font-weight:600;grid-column:1/-1;}
+/* ── Submit button ── */
+.contactSubmitBtn {
+  grid-column: 1 / -1;
+  background: var(--mint);
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius-form);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: 0.25s;
+  margin-top: 0.5rem;
+}
 
+.contactSubmitBtn:hover {
+  background: #00a882;
+}
 
+/* ── Success message ── */
+.contactSuccessMsg {
+  display: none;
+  background: var(--mint);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: var(--radius-form);
+  text-align: center;
+  font-weight: 600;
+  grid-column: 1 / -1;
+}
 
+/* ── Footer ── */
 .footer {
   background: #070F1E;
   color: rgba(255, 255, 255, 0.4);
@@ -102,13 +158,14 @@
   font-size: 0.85rem;
 }
 
-/* Add this */
-.full {
-  grid-column: 1 / -1;
-}
-
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .contactInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contactFormGrid {
     grid-template-columns: 1fr;
   }
 }

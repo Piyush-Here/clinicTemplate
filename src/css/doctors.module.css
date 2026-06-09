@@ -8,6 +8,7 @@
   font-family: var(--font-display);
   font-size: 2.6rem;
   margin-bottom: 0.5rem;
+  color: #111827;
 }
 
 .doctors > p {
@@ -26,9 +27,8 @@
   border-radius: var(--radius-card);
   overflow: hidden;
   transition: var(--transition-med);
-  opacity: 0;
-  transform: translateY(20px);
-  background: #ffffff; /* ← add this to ensure white card background */
+  background: #ffffff;
+  /* REMOVED opacity:0 and transform — now handled by animate-on-scroll */
 }
 
 .docCard:hover {
@@ -54,7 +54,7 @@
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
-  color: #111827; /* ← add this */
+  color: #111827;
 }
 
 .docInfo span {
