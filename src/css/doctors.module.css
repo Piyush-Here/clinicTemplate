@@ -28,6 +28,7 @@
   transition: var(--transition-med);
   opacity: 0;
   transform: translateY(20px);
+  background: #ffffff; /* ← add this to ensure white card background */
 }
 
 .docCard:hover {
